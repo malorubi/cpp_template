@@ -1,3 +1,6 @@
 #include <ml/cpp_template/cpp_template.hpp>
 
-int main() {}
+#include <boost/ut.hpp>
+
+int main ()
+{}

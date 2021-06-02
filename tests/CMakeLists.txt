@@ -8,5 +8,6 @@ FetchContent_MakeAvailable(BoostUT)
 
 add_executable(tests tests.cpp)
 target_link_libraries(tests PRIVATE ml::${PROJECT_NAME})
+target_link_libraries(tests PRIVATE ut)
 
 add_test(NAME tests COMMAND tests)
