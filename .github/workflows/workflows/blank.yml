@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+jobs:
+  build:  
+    runs-on: ubuntu-latest
+    container: malorubiuz/cpp:latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      # Runs CMake
+      - name: CMake build
+        run: |
+          mkdir $GITHUB_WORKSPACE/build
+          cmake -S $GITHUB_WORKSPACE -B $GITHUB_WORKSPACE/build --preset=CI
+          cmake --build $GITHUB_WORKSPACE/build
+
+      # Publishes documentation
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/docs/html/
+          enable_jekyll: false
+          allow_empty_commit: false
+          force_orphan: true
+          publish_branch: gh-pages
