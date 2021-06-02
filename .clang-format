@@ -361,7 +361,7 @@ AllowShortFunctionsOnASingleLine:           None
 
 # Dependent on the value, auto lambda []() { return 0; } can be put on a single line.
 # Possible values: Never, Empty, Inline, All.
-AllowShortLambdasOnASingleLine:             All
+AllowShortLambdasOnASingleLine:             Empty
 
 
 # If true, if (a) return; can be put on a single line.
@@ -415,7 +415,7 @@ PointerAlignment:                       Left
 
 # Dependent on the value, multiple #include blocks can be sorted as one and divided based on category.
 # Possible values: Preserve, Merge, Regroup.
-IncludeBlocks:   Regroup
+IncludeBlocks:   Preserve
 
 
 # Controls if and how clang-format will sort #includes.
