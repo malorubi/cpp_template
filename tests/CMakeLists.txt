@@ -1,13 +1,16 @@
 
 include(FetchContent)
-FetchContent_Declare(BoostUT
-  GIT_REPOSITORY "https://github.com/boost-ext/ut"
-  GIT_TAG origin/master)
+FetchContent_Declare(doctest
+  GIT_REPOSITORY "https://github.com/onqtam/doctest"
+  GIT_TAG origin/dev)
 
-FetchContent_MakeAvailable(BoostUT)
+find_package(doctest CONFIG QUIET)
+if(NOT Doctest_FOUND)
+  FetchContent_MakeAvailable(doctest)
+endif()
 
 add_executable(tests tests.cpp)
 target_link_libraries(tests PRIVATE ml::${PROJECT_NAME})
-target_link_libraries(tests PRIVATE ut)
+target_link_libraries(tests PRIVATE doctest::doctest)
 
 add_test(NAME tests COMMAND tests)

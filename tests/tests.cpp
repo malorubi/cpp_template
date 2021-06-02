@@ -1,6 +1,9 @@
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <ml/cpp_template/cpp_template.hpp>
 
-#include <boost/ut.hpp>
+#include <doctest/doctest.h>
 
-int main ()
-{}
+TEST_CASE ("cpp_template")
+{
+  CHECK (1 == 1);
+}
