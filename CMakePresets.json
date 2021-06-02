@@ -14,5 +14,20 @@
       "binaryDir": "build",
       "generator": "Ninja"
     }
+  ],
+  "buildPresets": [
+    {
+      "name": "CI",
+      "configurePreset": "CI"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "CI",
+      "configurePreset": "CI",
+      "output": {
+        "verbosity": "verbose"
+      }
+    }
   ]
 }
