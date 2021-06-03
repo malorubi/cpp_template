@@ -12,15 +12,14 @@ jobs:
     container: malorubiuz/cpp:latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
       # Runs CMake
-      - name: CMake build
+      - name: CMake configure build test
         run: |
-          mkdir $GITHUB_WORKSPACE/build
-          cmake -S $GITHUB_WORKSPACE -B $GITHUB_WORKSPACE/build --preset=CI
-          cmake --build $GITHUB_WORKSPACE/build
+          cd $GITHUB_WORKSPACE && cmake --preset=CI
+          cd $GITHUB_WORKSPACE && cmake --build --preset=CI
+          cd $GITHUB_WORKSPACE && ctest --preset=CI
 
       # Publishes documentation
       - uses: peaceiris/actions-gh-pages@v3
