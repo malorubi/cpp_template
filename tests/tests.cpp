@@ -1,4 +1,3 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <ml/cpp_template/cpp_template.hpp>
 
 #include <doctest/doctest.h>
