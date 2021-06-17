@@ -8,9 +8,7 @@ project(cpp_template
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
-set (documented_headers 
-  details/cpp_template/basics.hpp)
-list(TRANSFORM documented_headers PREPEND ${CMAKE_CURRENT_LIST_DIR}/include/ml/)
+file(GLOB_RECURSE documented_headers CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/include/ml/*.hpp)
 
 # --- Options
 
