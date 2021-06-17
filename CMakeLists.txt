@@ -7,6 +7,7 @@ project(cpp_template
 
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
+include(FetchContent)
 
 file(GLOB_RECURSE documented_headers CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/include/ml/*.hpp)
 
