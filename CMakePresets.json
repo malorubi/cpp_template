@@ -12,7 +12,10 @@
       "name": "CI",
       "description": "Build tests and documentation.",
       "binaryDir": "build",
-      "generator": "Ninja"
+      "generator": "Ninja",
+      "cacheVariables": {
+        "ML_CPP_TEMPLATE_ENABLE_DOCS": true
+      }
     }
   ],
   "buildPresets": [

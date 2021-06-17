@@ -69,7 +69,7 @@ export(EXPORT ${PROJECT_NAME}_Targets
 
 # --- Documentation
 
-option(ML_CPP_TEMPLATE_ENABLE_DOCS "Generate documentation." ${MAIN_PROJECT})
+option(ML_CPP_TEMPLATE_ENABLE_DOCS "Generate documentation." OFF)
 if(ML_CPP_TEMPLATE_ENABLE_DOCS)
   string(REPLACE ";" " " DOXYGEN_INPUT "${documented_headers}")
   add_subdirectory(docs)
