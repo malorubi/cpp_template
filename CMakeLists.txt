@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16.0)
 project(cpp_template
   VERSION 0.1.0
   DESCRIPTION "cpp_template"
-  HOMEPAGE_URL "https://github.com/malorubi/cpp_template"
+  HOMEPAGE_URL "https://github.com/marcorubini/cpp_template"
   LANGUAGES CXX)
 
 include(GNUInstallDirs)
